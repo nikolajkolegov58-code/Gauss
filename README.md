@@ -1,4 +1,5 @@
 //сборка
+
 mkdir build
 
 cd build

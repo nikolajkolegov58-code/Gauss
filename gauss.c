@@ -2,8 +2,10 @@
 #include <math.h>
 
 int Gauss(int n, double** A, double** B) {
-int i, j, i0=0, k; double M, eps=1e-6, bufer;
+int i, j, i0=0, k; double M=0, eps=1e-8, bufer;
 
+for (i=0; i<n; i++) { for (j=0; j<n; j++) if (fabs(A[i][j])>M) M=fabs(A[i][j]); }
+eps*=M; M=0;                         //choose eps
 
 for (j=0; j<n; j++) {                  //direct moving
 M=0;
